@@ -13,6 +13,7 @@
       pkgs.zsh-completions
       pkgs.zsh-autosuggestions
       pkgs.zsh-syntax-highlighting
+      pkgs.zsh-powerlevel10k
     ];
     shellHook = ''
       export SHELL=$(which zsh)
@@ -81,6 +82,6 @@ source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
           }
           zle -N sudo-command-line
           bindkey "\e\e" sudo-command-line
-      echo "Добро пожаловать в devShell!"
+      echo "asdfasdf!"
     '';
   }
