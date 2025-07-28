@@ -10,22 +10,7 @@
         pkgs = import nixpkgs { system = system; };
       in {
         packages.default = pkgs.hello;
-        devShells.default = pkgs.mkShell {
-          buildInputs = [
-            pkgs.vim
-            pkgs.git
-            pkgs.gcc
-            pkgs.gdb
-            pkgs.zsh
-            pkgs.tmux
-            pkgs.htop
-            pkgs.neovim
-            pkgs.python3
-          ];
-          shellHook = ''
-            echo "Добро пожаловать в devShell!"
-          '';
-        };
+        devShells.default = import ./devshell.nix { inherit pkgs; };
       }
     ) // {
       nixosConfigurations = {
